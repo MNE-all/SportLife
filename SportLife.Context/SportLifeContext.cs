@@ -5,8 +5,18 @@ namespace SportLife.Context
 {
     public class SportLifeContext : DbContext
     {
-        DbSet<Record> Records { get; set; }
-        DbSet<User> Users { get; set; }
+        public DbSet<Record> Records { get; set; }
+        public DbSet<User> Users { get; set; }
 
+
+        public SportLifeContext(DbContextOptions<SportLifeContext> options) 
+            : base(options)
+        { 
+            Database.EnsureCreated();
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }
