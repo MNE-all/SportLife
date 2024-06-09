@@ -1,0 +1,6 @@
+@SportLife.API_HostAddress = http://localhost:5267
+
+GET {{SportLife.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
