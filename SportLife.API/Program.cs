@@ -1,16 +1,28 @@
 using Microsoft.EntityFrameworkCore;
-using SportLife.Context;
-using Microsoft.Data.SqlClient;
 using Npgsql;
+using SportLife.API.Infrastructures;
+using SportLife.Context;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Add comments
+builder.Services.AddSwaggerGen(options =>
+{
+    var basePath = AppContext.BaseDirectory;
+
+    var xmlPath = Path.Combine(basePath, "SportLife.API.xml");
+    options.IncludeXmlComments(xmlPath);
+});
+
+// Add Dep
+builder.Services.AddDependencies();
 
 var conStrBuilder = new NpgsqlConnectionStringBuilder(
         builder.Configuration.GetConnectionString("PostgreDatabase"));

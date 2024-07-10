@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SportLife.API</name>
+    </assembly>
+    <members>
+        <member name="M:SportLife.API.Controllers.ExerciseController.GetUsers">
+            <summary>
+            Просмотр упражнений
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SportLife.API.Controllers.ExerciseController.Add(SportLife.Services.Models.ExerciseRequest)">
+            <summary>
+            Добавление упражнения
+            </summary>
+            <param name="exerciseRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SportLife.API.Controllers.ExerciseController.AddStep(SportLife.Services.Models.ExerciseStepRequest)">
+            <summary>
+            Добавление шага упражнения
+            </summary>
+            <param name="exerciseStepRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SportLife.API.Controllers.ExerciseController.GetStepsByExerciseId(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Просмотр шагов для выполнения упражнения
+            </summary>
+            <param name="id">Идентификатор упражнения</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,6 +1,5 @@
 ﻿using SportLife.Context;
 using SportLife.Context.Models;
-using System.Runtime.InteropServices;
 
 namespace SportLife.Services
 {
@@ -9,7 +8,9 @@ namespace SportLife.Services
         SportLifeContext db;
         public UserService(SportLifeContext sportLifeContext)
         {
+            sportLifeContext.Exercise.Add(new Exercise());
             db = sportLifeContext;
+            db.SaveChanges();
         }
         public User? Create(string login, string password)
         {

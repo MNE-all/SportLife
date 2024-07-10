@@ -7,6 +7,8 @@ namespace SportLife.Context
     {
         public DbSet<Record> Records { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Exercise> Exercise { get; set; }
+        public DbSet<ExerciseStep> ExerciseSteps { get; set; }
 
 
         public SportLifeContext(DbContextOptions<SportLifeContext> options) 
@@ -16,6 +18,7 @@ namespace SportLife.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SportLifeDev;Username=postgres;Password=die4Me");
             base.OnConfiguring(optionsBuilder);
         }
     }

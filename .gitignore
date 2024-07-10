@@ -5,6 +5,8 @@
 
 appsettings.json
 
+[Mm]igrations
+
 # User-specific files
 *.rsuser
 *.suo
