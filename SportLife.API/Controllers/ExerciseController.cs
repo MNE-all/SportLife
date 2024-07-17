@@ -17,10 +17,6 @@ namespace SportLife.API.Controllers
             this.exerciseService = exerciseService;
             stepService = exerciseStepService;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         /// <summary>
         /// Просмотр упражнений
