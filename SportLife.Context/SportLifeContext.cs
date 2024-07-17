@@ -18,7 +18,7 @@ namespace SportLife.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SportLifeDev;Username=postgres;Password=die4Me");
+            optionsBuilder.UseNpgsql("Host=home-server.tech;Port=5432;Database=SportLifeDev;Username=postgres;Password=QmR4uzNvgnELLP3");
             base.OnConfiguring(optionsBuilder);
         }
     }

@@ -3,7 +3,6 @@ using SportLife.Context.Models;
 using SportLife.Repositories.Interfaces;
 using SportLife.Services.Interfaces;
 using SportLife.Services.Models;
-using System.Collections.ObjectModel;
 
 namespace SportLife.Services
 {
